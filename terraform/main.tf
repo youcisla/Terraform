@@ -42,7 +42,7 @@ resource "aws_vpc" "main" {
 }
 
 resource "aws_subnet" "internal" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "192.168.1.0/24"
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "192.168.1.0/24"
   availability_zone = "eu-west-3a"
 }
