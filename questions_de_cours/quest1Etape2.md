@@ -19,20 +19,3 @@ La **`aws_route_table`** définit les routes qu'un sous-réseau dans un VPC doit
 ## 5. À quoi sert la `aws_route_table_association` ?
 
 La **`aws_route_table_association`** associe une table de routage (`aws_route_table`) à un sous-réseau spécifique. Cette association indique que le sous-réseau doit utiliser la table de routage spécifiée pour gérer son trafic réseau. C'est ainsi que Terraform lie un sous-réseau à une table de routage dans AWS.
-
----
-
-## Schéma de l'infrastructure réseau
-
-Vous devez inclure un schéma de votre infrastructure réseau. Voici ce que le schéma devrait inclure :
-1. Un VPC avec la plage d'adresses `192.168.0.0/16`.
-2. Un sous-réseau nommé `internal` avec la plage d'adresses `192.168.1.0/24`.
-3. Une Internet Gateway reliée au VPC pour permettre l'accès à Internet.
-4. Une table de routage avec une route vers l'Internet Gateway pour le sous-réseau.
-5. Une instance EC2 pour chaque rôle :
-   - Une instance nommée **reverse_proxy**.
-   - Deux instances de type **backend**.
-   - Une instance de type **base de données**.
-
-N'oubliez pas de lier correctement les sous-réseaux à la table de routage et d'appliquer une ACL qui autorise uniquement le trafic SSH entrant sur le port 22 et tout le trafic sortant.
-

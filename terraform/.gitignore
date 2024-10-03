@@ -4,3 +4,12 @@ terraform.tfstate.backup
 terraform.tfvars
 *.terraform.lock.hcl
 *.backup
+*.tfstate.*
+crash.log
+../deploy_idrsa
+../deploy_idrsa.pub
+*.tfplan
+*.log
+*.bak
+*.swp
+*.swo

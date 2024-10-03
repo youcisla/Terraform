@@ -1,5 +1,7 @@
 # Questions sur Terraform
 
+# Quest 1 - Étape 1: Réponses aux Questions
+
 ## Qu'est-ce que l'Infrastructure as code ?
 
 L'Infrastructure as Code (IaC) est une pratique qui consiste à gérer et provisionner des ressources informatiques à travers des fichiers de configuration lisibles et modifiables. Ces fichiers décrivent l'infrastructure de manière déclarative ou impérative, permettant aux équipes de déployer, gérer et versionner l'infrastructure de manière similaire au code applicatif. Cela permet une plus grande automatisation, une gestion plus efficace des versions et une meilleure collaboration.
