@@ -16,7 +16,7 @@ resource "aws_instance" "reverse_proxy" {
   }
 
   tags = {
-    Name = "Reverse Proxy"
+    Name = "Reverse Proxy" 
   }
 }
 
