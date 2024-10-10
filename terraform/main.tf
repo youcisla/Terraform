@@ -36,11 +36,3 @@ resource "aws_security_group" "allow_all" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
-resource "aws_vpc" "my_vpc" {
-  cidr_block = "192.168.0.0/16"
-  
-  tags = {
-    Name = "my_vpc"
-  }
-}

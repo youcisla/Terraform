@@ -16,7 +16,16 @@ resource "aws_instance" "reverse_proxy" {
   }
 
   tags = {
-    Name = "Reverse Proxy" 
+    Name = "Reverse Proxy"
+  }
+}
+
+resource "aws_eip" "reverse_proxy_eip" {
+  domain   = "vpc"
+  instance = aws_instance.reverse_proxy.id
+
+  tags = {
+    Name = "Reverse Proxy EIP"
   }
 }
 
