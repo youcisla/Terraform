@@ -44,13 +44,3 @@ resource "aws_vpc" "my_vpc" {
     Name = "my_vpc"
   }
 }
-
-# resource "aws_subnet" "internal" {
-#   vpc_id            = aws_vpc.my_vpc.id
-#   cidr_block        = "192.168.1.0/24"
-#   availability_zone = "eu-west-3a"
-  
-#   tags = {
-#     Name = "subnet internal"
-#   }
-# }
