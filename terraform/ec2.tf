@@ -7,7 +7,7 @@ resource "aws_instance" "reverse_proxy" {
   associate_public_ip_address = true
 
   vpc_security_group_ids = [aws_security_group.allow_all.id]
-  subnet_id              = aws_subnet.internal.id
+  subnet_id              = aws_subnet.internal_subnet.id
 
   root_block_device {
     volume_size           = 8
@@ -29,7 +29,7 @@ resource "aws_instance" "backend1" {
   associate_public_ip_address = false
 
   vpc_security_group_ids = [aws_security_group.allow_all.id]
-  subnet_id              = aws_subnet.internal.id
+  subnet_id              = aws_subnet.internal_subnet.id
 
   root_block_device {
     volume_size           = 8
@@ -51,7 +51,7 @@ resource "aws_instance" "backend2" {
   associate_public_ip_address = false
 
   vpc_security_group_ids = [aws_security_group.allow_all.id]
-  subnet_id              = aws_subnet.internal.id
+  subnet_id              = aws_subnet.internal_subnet.id
 
   root_block_device {
     volume_size           = 8
@@ -73,7 +73,7 @@ resource "aws_instance" "database" {
   associate_public_ip_address = false
 
   vpc_security_group_ids = [aws_security_group.allow_all.id]
-  subnet_id              = aws_subnet.internal.id
+  subnet_id              = aws_subnet.internal_subnet.id
 
   root_block_device {
     volume_size           = 8

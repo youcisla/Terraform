@@ -18,7 +18,7 @@ resource "aws_key_pair" "deploy_key" {
 }
 
 resource "aws_security_group" "allow_all" {
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = aws_vpc.my_vpc.id
   name        = "allow_all_traffic"
   description = "Allow all inbound and outbound traffic"
 
@@ -37,20 +37,20 @@ resource "aws_security_group" "allow_all" {
   }
 }
 
-resource "aws_vpc" "main" {
+resource "aws_vpc" "my_vpc" {
   cidr_block = "192.168.0.0/16"
   
   tags = {
-    Name = "vpc-main"
+    Name = "my_vpc"
   }
 }
 
-resource "aws_subnet" "internal" {
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = "192.168.1.0/24"
-  availability_zone = "eu-west-3a"
+# resource "aws_subnet" "internal" {
+#   vpc_id            = aws_vpc.my_vpc.id
+#   cidr_block        = "192.168.1.0/24"
+#   availability_zone = "eu-west-3a"
   
-  tags = {
-    Name = "subnet internal"
-  }
-}
+#   tags = {
+#     Name = "subnet internal"
+#   }
+# }
